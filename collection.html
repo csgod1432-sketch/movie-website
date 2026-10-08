@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore Cinephile’s curated film and series collections. Browse crime, fantasy, Indian cinema, survival stories, and superhero worlds.">
+  <title>Collections | Cinephile</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="collection.css">
+  <script src="collection.js" defer></script>
+</head>
+<body class="collections-body">
+  <a class="skip-link" href="#collections-main">Skip to collections</a>
+  <header class="header">
+    <a href="index.html" class="logo" aria-label="Cinephile home"><span>CINE</span><span class="logo-icon" aria-hidden="true">🎬</span><span>PHILE</span></a>
+    <div class="header-right">
+      <div class="search-box"><span class="search-symbol" aria-hidden="true">⌕</span><input id="collection-search" type="search" aria-label="Search collections or titles" placeholder="Search collections or titles…" autocomplete="off"></div>
+      <div class="profile" aria-label="Cinephile profile">C</div>
+    </div>
+  </header>
+  <nav class="collections-mobile-nav" aria-label="Main navigation"><a href="index.html">Explore</a><a href="collection.html" aria-current="page">Collections</a></nav>
+  <div class="page-layout">
+    <main class="main-content" id="collections-main">
+      <section class="collections-intro" aria-labelledby="page-title">
+        <p class="eyebrow">HANDPICKED STORIES</p>
+        <h1 id="page-title">Collections<span class="title-dot">.</span></h1>
+        <p>Find a world to get lost in.</p>
+      </section>
+      <section class="collection-feature" aria-labelledby="featured-title">
+        <img class="feature-backdrop" src="images3/endgame-backdrop.jpg" alt="" width="1200" height="675" fetchpriority="high">
+        <div class="feature-copy"><span class="feature-kicker">FEATURED COLLECTION</span><h2 id="featured-title">Extraordinary heroes.<br>Impossible stakes.</h2><p>Marvel and DC stories from the Cinephile catalogue.</p><div class="feature-actions"><a href="#superhero" class="collection-button">Explore Superhero Universe</a><span>3 titles</span></div></div>
+      </section>
+      <section aria-labelledby="curated-title" class="collections-section">
+        <div class="collections-heading"><h2 id="curated-title">Curated Collections</h2><p id="collection-count" role="status" aria-live="polite">6 collections</p></div>
+        <div class="collections-grid"><details class="collection-card" id="crime">
+  <summary>
+    <div class="collection-image"><img src="images5/Drishyam-backdrop.jpg" alt="Drishyam: The Conclusion" width="640" height="360" ><span class="collection-number">01</span><span class="cover-count">2 titles</span></div>
+    <div class="collection-details"><h3>Crime Worlds</h3><p class="collection-tags">Mystery · Thriller · Crime</p><p class="collection-description">Secrets, investigations, and the people caught in between.</p><span class="collection-bottom"><span class="closed-label">View titles</span><span class="open-label">Hide titles</span><span class="expand-icon" aria-hidden="true">+</span></span></div>
+  </summary>
+  <ul class="collection-films" aria-label="Titles in Crime Worlds"><li><a href="details4.html"><img src="images/trending5.jpg" alt="" width="42" height="63" loading="lazy"><span><strong>Drishyam: The Conclusion</strong><small>Mystery · Thriller</small></span><span class="film-info" aria-hidden="true">i</span></a></li><li><a href="details.html"><img src="images/trending1.jpg" alt="" width="42" height="63" loading="lazy"><span><strong>Primetime</strong><small>Crime · Drama</small></span><span class="film-info" aria-hidden="true">i</span></a></li></ul>
+</details>
+<details class="collection-card" id="reality">
+  <summary>
+    <div class="collection-image"><img src="images7/hope-backdrop.jpg" alt="Hope" width="640" height="360" ><span class="collection-number">02</span><span class="cover-count">3 titles</span></div>
+    <div class="collection-details"><h3>Beyond Reality</h3><p class="collection-tags">Sci-Fi · Fantasy · Adventure</p><p class="collection-description">Step into worlds where the ordinary rules no longer apply.</p><span class="collection-bottom"><span class="closed-label">View titles</span><span class="open-label">Hide titles</span><span class="expand-icon" aria-hidden="true">+</span></span></div>
+  </summary>
+  <ul class="collection-films" aria-label="Titles in Beyond Reality"><li><a href="details2.html"><img src="images/trending3.jpg" alt="" width="42" height="63" loading="lazy"><span><strong>Avengers: Endgame</strong><small>Action · Sci-Fi</small></span><span class="film-info" aria-hidden="true">i</span></a></li><li><a href="details6.html"><img src="images/newmovie3.jpg" alt="" width="42" height="63" loading="lazy"><span><strong>Hope</strong><small>Mystery · Action</small></span><span class="film-info" aria-hidden="true">i</span></a></li><li><a href="details8.html"><img src="images/newmovie5.jpg" alt="" width="42" height="63" loading="lazy"><span><strong>The Vvaan</strong><small>Adventure · Fantasy</small></span><span class="film-info" aria-hidden="true">i</span></a></li></ul>
+</details>
+<details class="collection-card" id="indian">
+  <summary>
+    <div class="collection-image"><img src="images8/paradise-backdrop.jpg" alt="The Paradise" width="640" height="360" ><span class="collection-number">03</span><span class="cover-count">3 titles</span></div>
+    <div class="collection-details"><h3>Indian Cinema</h3><p class="collection-tags">Hindi · Telugu · Storytelling</p><p class="collection-description">Family secrets, folklore, and the fight to belong.</p><span class="collection-bottom"><span class="closed-label">View titles</span><span class="open-label">Hide titles</span><span class="expand-icon" aria-hidden="true">+</span></span></div>
+  </summary>
+  <ul class="collection-films" aria-label="Titles in Indian Cinema"><li><a href="details4.html"><img src="images/trending5.jpg" alt="" width="42" height="63" loading="lazy"><span><strong>Drishyam: The Conclusion</strong><small>Mystery · Thriller</small></span><span class="film-info" aria-hidden="true">i</span></a></li><li><a href="details7.html"><img src="images/newmovie4.jpg" alt="" width="42" height="63" loading="lazy"><span><strong>The Paradise</strong><small>Action · Drama</small></span><span class="film-info" aria-hidden="true">i</span></a></li><li><a href="details8.html"><img src="images/newmovie5.jpg" alt="" width="42" height="63" loading="lazy"><span><strong>The Vvaan</strong><small>Adventure · Fantasy</small></span><span class="film-info" aria-hidden="true">i</span></a></li></ul>
+</details>
+<details class="collection-card" id="survival">
+  <summary>
+    <div class="collection-image"><img src="images6/beast-backdrop.jpg" alt="Heart of the Beast" width="640" height="360" loading="lazy"><span class="collection-number">04</span><span class="cover-count">3 titles</span></div>
+    <div class="collection-details"><h3>Against the Odds</h3><p class="collection-tags">Survival · Suspense · Adventure</p><p class="collection-description">When getting through the night becomes the whole story.</p><span class="collection-bottom"><span class="closed-label">View titles</span><span class="open-label">Hide titles</span><span class="expand-icon" aria-hidden="true">+</span></span></div>
+  </summary>
+  <ul class="collection-films" aria-label="Titles in Against the Odds"><li><a href="details5.html"><img src="images/newmovie2.jpg" alt="" width="42" height="63" loading="lazy"><span><strong>Heart of the Beast</strong><small>Adventure · Survival</small></span><span class="film-info" aria-hidden="true">i</span></a></li><li><a href="details3.html"><img src="images/trending4.jpg" alt="" width="42" height="63" loading="lazy"><span><strong>Resident Evil</strong><small>Horror · Survival</small></span><span class="film-info" aria-hidden="true">i</span></a></li><li><a href="details6.html"><img src="images/newmovie3.jpg" alt="" width="42" height="63" loading="lazy"><span><strong>Hope</strong><small>Mystery · Action</small></span><span class="film-info" aria-hidden="true">i</span></a></li></ul>
+</details>
+<details class="collection-card" id="shows">
+  <summary>
+    <div class="collection-image"><img src="images2/lanterns-backdrop.jpg" alt="Lanterns" width="640" height="360" loading="lazy"><span class="collection-number">05</span><span class="cover-count">5 titles</span></div>
+    <div class="collection-details"><h3>Must Watch Shows</h3><p class="collection-tags">Crime · Drama · Series</p><p class="collection-description">Find your next story to settle into, one episode at a time.</p><span class="collection-bottom"><span class="closed-label">View titles</span><span class="open-label">Hide titles</span><span class="expand-icon" aria-hidden="true">+</span></span></div>
+  </summary>
+  <ul class="collection-films" aria-label="Titles in Must Watch Shows"><li><a href="details1.html"><img src="images/show1.jpg" alt="" width="42" height="63" loading="lazy"><span><strong>Lanterns</strong><small>Series · Superhero</small></span><span class="film-info" aria-hidden="true">i</span></a></li><li><a href="details9.html"><img src="images/show2.jpg" alt="" width="42" height="63" loading="lazy"><span><strong>Hunkkaar: The Roar</strong><small>Series · Crime</small></span><span class="film-info" aria-hidden="true">i</span></a></li><li><a href="details10.html"><img src="images/show3.jpg" alt="" width="42" height="63" loading="lazy"><span><strong>Monster: The Lizzie Borden Story</strong><small>Series · Crime</small></span><span class="film-info" aria-hidden="true">i</span></a></li><li><a href="details11.html"><img src="images/show4.jpg" alt="" width="42" height="63" loading="lazy"><span><strong>The Revolutionaries</strong><small>Series · Drama</small></span><span class="film-info" aria-hidden="true">i</span></a></li><li><a href="details12.html"><img src="images/show5.jpg" alt="" width="42" height="63" loading="lazy"><span><strong>Brothers</strong><small>Series · Drama</small></span><span class="film-info" aria-hidden="true">i</span></a></li></ul>
+</details>
+<details class="collection-card" id="superhero">
+  <summary>
+    <div class="collection-image"><img src="images3/endgame-backdrop.jpg" alt="Avengers: Endgame" width="640" height="360" loading="lazy"><span class="collection-number">06</span><span class="cover-count">3 titles</span></div>
+    <div class="collection-details"><h3>Superhero Universe</h3><p class="collection-tags">Marvel · DC · Action</p><p class="collection-description">Extraordinary heroes, impossible choices, and worlds at stake.</p><span class="collection-bottom"><span class="closed-label">View titles</span><span class="open-label">Hide titles</span><span class="expand-icon" aria-hidden="true">+</span></span></div>
+  </summary>
+  <ul class="collection-films" aria-label="Titles in Superhero Universe"><li><a href="details2.html"><img src="images/trending3.jpg" alt="" width="42" height="63" loading="lazy"><span><strong>Avengers: Endgame</strong><small>Action · Sci-Fi</small></span><span class="film-info" aria-hidden="true">i</span></a></li><li><a href="details1.html"><img src="images/show1.jpg" alt="" width="42" height="63" loading="lazy"><span><strong>Lanterns</strong><small>Series · Superhero</small></span><span class="film-info" aria-hidden="true">i</span></a></li><li><a href="details13.html"><img src="images/upcoming1.jpg" alt="" width="42" height="63" loading="lazy"><span><strong>Avengers Doomsday</strong><small>Upcoming · Action</small></span><span class="film-info" aria-hidden="true">i</span></a></li></ul>
+</details></div>
+        <div class="collection-empty" id="collection-empty" hidden><h3>No collections found</h3><p>Try a collection name, genre, or film title.</p><button type="button" class="collection-button" id="clear-search">Clear search</button></div>
+      </section>
+    </main>
+    <aside class="sidebar" aria-label="Site navigation">
+      <div class="sidebar-title">MENU</div>
+      <nav class="sidebar-menu" aria-label="Main navigation"><a href="index.html">Explore</a><a href="collection.html" class="active" aria-current="page">Collections</a></nav>
+      <div class="sidebar-divider"></div>
+      <div class="featured-title">IN THIS COLLECTION</div>
+      <a class="collection-spotlight" href="details2.html"><img src="images/trending3.jpg" alt="Avengers: Endgame poster" width="400" height="600"><span><small>SUPERHERO UNIVERSE</small><strong>Avengers: Endgame</strong><span class="spotlight-meta">Action · Sci-Fi</span><span class="spotlight-link">View film details</span></span></a>
+    </aside>
+  </div>
+  <footer class="site-footer"><div class="footer-top"><p class="made-india">Made with ❤️ in India</p><a href="index.html" class="footer-home">Explore Cinephile</a></div><div class="footer-divider"></div><div class="footer-bottom"><p>© 2026 CINE 🎬 PHILE. All Rights Reserved.</p><span class="footer-note">A collection for every kind of film night.</span></div></footer>
+</body>
+</html>
