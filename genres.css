@@ -1,0 +1,318 @@
+﻿/* ========================================================
+   CINEPHILE - GENRES PAGE STYLES (Pure CSS - NO JS)
+   Matches Cinephile Dark Palette & Design System
+   ======================================================== */
+
+/* GENRES INTRO HEADER */
+.genres-intro {
+    margin-bottom: 36px;
+}
+
+.genres-eyebrow {
+    color: #9d4edd;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.genres-title {
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.genres-title .title-dot {
+    color: #8029dc;
+}
+
+.genres-subtitle {
+    color: #83838e;
+    font-size: 14px;
+    max-width: 650px;
+    line-height: 1.5;
+}
+
+/* ========================================================
+   PURE CSS GENRE FILTER TABS (Radio input driven)
+   ======================================================== */
+.genre-filter-wrapper input[type="radio"] {
+    display: none;
+}
+
+.genre-filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #1f1f24;
+}
+
+.genre-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    background: #101014;
+    border: 1px solid #26262c;
+    border-radius: 22px;
+    color: #9e9ea7;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.25s ease;
+}
+
+.genre-chip:hover {
+    color: #ffffff;
+    border-color: #4b4b55;
+    background: #17171d;
+    transform: translateY(-1px);
+}
+
+.genre-chip .chip-count {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.06);
+    font-size: 11px;
+    color: #7b7b85;
+    transition: all 0.25s ease;
+}
+
+/* Active Filter State on Radio Checked */
+#filter-all:checked ~ .genre-filter-bar label[for="filter-all"],
+#filter-action:checked ~ .genre-filter-bar label[for="filter-action"],
+#filter-drama:checked ~ .genre-filter-bar label[for="filter-drama"],
+#filter-crime:checked ~ .genre-filter-bar label[for="filter-crime"],
+#filter-scifi:checked ~ .genre-filter-bar label[for="filter-scifi"],
+#filter-thriller:checked ~ .genre-filter-bar label[for="filter-thriller"],
+#filter-mystery:checked ~ .genre-filter-bar label[for="filter-mystery"],
+#filter-adventure:checked ~ .genre-filter-bar label[for="filter-adventure"],
+#filter-superhero:checked ~ .genre-filter-bar label[for="filter-superhero"],
+#filter-horror:checked ~ .genre-filter-bar label[for="filter-horror"] {
+    background: linear-gradient(135deg, rgba(128, 41, 220, 0.25), rgba(48, 24, 68, 0.45));
+    border-color: #8029dc;
+    color: #ffffff;
+    box-shadow: 0 0 16px rgba(128, 41, 220, 0.22);
+}
+
+#filter-all:checked ~ .genre-filter-bar label[for="filter-all"] .chip-count,
+#filter-action:checked ~ .genre-filter-bar label[for="filter-action"] .chip-count,
+#filter-drama:checked ~ .genre-filter-bar label[for="filter-drama"] .chip-count,
+#filter-crime:checked ~ .genre-filter-bar label[for="filter-crime"] .chip-count,
+#filter-scifi:checked ~ .genre-filter-bar label[for="filter-scifi"] .chip-count,
+#filter-thriller:checked ~ .genre-filter-bar label[for="filter-thriller"] .chip-count,
+#filter-mystery:checked ~ .genre-filter-bar label[for="filter-mystery"] .chip-count,
+#filter-adventure:checked ~ .genre-filter-bar label[for="filter-adventure"] .chip-count,
+#filter-superhero:checked ~ .genre-filter-bar label[for="filter-superhero"] .chip-count,
+#filter-horror:checked ~ .genre-filter-bar label[for="filter-horror"] .chip-count {
+    background: #8029dc;
+    color: #ffffff;
+}
+
+/* ========================================================
+   FILTERING MOVIE CARDS USING PURE CSS
+   ======================================================== */
+.genre-movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+    gap: 26px 20px;
+    margin-bottom: 50px;
+}
+
+.genre-movie-item {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Default when a filter is chosen: hide all, then show only matching */
+#filter-action:checked ~ .genre-movies-grid .genre-movie-item:not(.is-action),
+#filter-drama:checked ~ .genre-movies-grid .genre-movie-item:not(.is-drama),
+#filter-crime:checked ~ .genre-movies-grid .genre-movie-item:not(.is-crime),
+#filter-scifi:checked ~ .genre-movies-grid .genre-movie-item:not(.is-scifi),
+#filter-thriller:checked ~ .genre-movies-grid .genre-movie-item:not(.is-thriller),
+#filter-mystery:checked ~ .genre-movies-grid .genre-movie-item:not(.is-mystery),
+#filter-adventure:checked ~ .genre-movies-grid .genre-movie-item:not(.is-adventure),
+#filter-superhero:checked ~ .genre-movies-grid .genre-movie-item:not(.is-superhero),
+#filter-horror:checked ~ .genre-movies-grid .genre-movie-item:not(.is-horror) {
+    display: none;
+}
+
+/* Card Styling Matching Cinephile */
+.genre-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.genre-card .poster {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    border-radius: 9px;
+    background: linear-gradient(145deg, #17171b, #0c0c0e);
+    border: 1px solid #29292e;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.28);
+    transition: border 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.genre-movie-item:hover .poster {
+    border-color: #4c4c57;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+    transform: translateY(-5px);
+}
+
+.genre-card .poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.genre-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 3px 8px;
+    background: rgba(14, 14, 18, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #e2e2e8;
+    backdrop-filter: blur(6px);
+}
+
+.genre-badge.top-pick {
+    background: rgba(128, 41, 220, 0.85);
+    border-color: #9d4edd;
+    color: #ffffff;
+}
+
+.rating-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 3px 7px;
+    background: rgba(10, 10, 13, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #ffc837;
+    backdrop-filter: blur(6px);
+}
+
+.genre-card-info {
+    margin-top: 12px;
+}
+
+.genre-card-title {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 5px;
+}
+
+.genre-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #7b7b86;
+    margin-bottom: 6px;
+}
+
+.genre-card-tags {
+    font-size: 11px;
+    color: #a463eb;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* GENRE HIGHLIGHT BANNER */
+.genre-highlight-box {
+    margin-bottom: 40px;
+    padding: 24px 28px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(32, 17, 48, 0.5), rgba(15, 15, 20, 0.7));
+    border: 1px solid #2c2538;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.genre-highlight-box h3 {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.genre-highlight-box p {
+    font-size: 13px;
+    color: #8c8c98;
+}
+
+.genre-spotlight-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #8029dc;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.genre-spotlight-btn:hover {
+    background: #943ee6;
+    transform: translateY(-2px);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1050px) {
+    .genre-filter-bar {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 12px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .genre-chip {
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .genres-title {
+        font-size: 26px;
+    }
+
+    .genre-movies-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px 12px;
+    }
+
+    .genre-highlight-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

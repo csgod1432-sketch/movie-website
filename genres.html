@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genres | Cinephile</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="genres.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <a href="index.html" class="logo" aria-label="Cinephile Home">
+            <span>CINE</span>
+            <span class="logo-icon">🎬</span>
+            <span>PHILE</span>
+        </a>
+
+            <nav class="header-nav" aria-label="Main navigation">
+        <a href="index.html">Explore</a>
+        <a href="collection.html">Collections</a>
+        <a href="genres.html" class="active">Genres</a>
+        <a href="discover.html">Discover</a>
+    </nav>
+
+    <div class="header-right">
+            <div class="search-box">
+                <span class="search-symbol">⌕</span>
+                <input type="text" placeholder="Search movies, shows...">
+            </div>
+
+            <div class="profile" aria-label="Profile">
+                C
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE / TABLET NAV -->
+    <nav class="home-collection-nav" aria-label="Main navigation">
+        <a href="index.html">Explore</a>
+        <a href="collection.html">Collections</a>
+        <a href="genres.html" aria-current="page">Genres</a>
+        <a href="discover.html">Discover</a>
+    </nav>
+
+    <!-- PAGE LAYOUT -->
+    <div class="page-layout">
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- INTRO -->
+            <section class="genres-intro">
+                <p class="genres-eyebrow">BROWSE BY CATEGORY</p>
+                <h1 class="genres-title">Explore Genres<span class="title-dot">.</span></h1>
+                <p class="genres-subtitle">Filter Cinephile's library by genre. Pick a mood and find your next story.</p>
+            </section>
+
+            <!-- PURE CSS FILTER SYSTEM -->
+            <div class="genre-filter-wrapper">
+                <!-- RADIO BUTTONS (CSS CONTROLLERS) -->
+                <input type="radio" name="genre-filter" id="filter-all" checked>
+                <input type="radio" name="genre-filter" id="filter-action">
+                <input type="radio" name="genre-filter" id="filter-drama">
+                <input type="radio" name="genre-filter" id="filter-crime">
+                <input type="radio" name="genre-filter" id="filter-scifi">
+                <input type="radio" name="genre-filter" id="filter-thriller">
+                <input type="radio" name="genre-filter" id="filter-mystery">
+                <input type="radio" name="genre-filter" id="filter-adventure">
+                <input type="radio" name="genre-filter" id="filter-superhero">
+                <input type="radio" name="genre-filter" id="filter-horror">
+
+                <!-- FILTER CHIPS -->
+                <div class="genre-filter-bar">
+                    <label for="filter-all" class="genre-chip">
+                        All <span class="chip-count">14</span>
+                    </label>
+                    <label for="filter-action" class="genre-chip">
+                        Action <span class="chip-count">9</span>
+                    </label>
+                    <label for="filter-drama" class="genre-chip">
+                        Drama <span class="chip-count">9</span>
+                    </label>
+                    <label for="filter-crime" class="genre-chip">
+                        Crime <span class="chip-count">4</span>
+                    </label>
+                    <label for="filter-scifi" class="genre-chip">
+                        Sci-Fi <span class="chip-count">4</span>
+                    </label>
+                    <label for="filter-thriller" class="genre-chip">
+                        Thriller <span class="chip-count">3</span>
+                    </label>
+                    <label for="filter-mystery" class="genre-chip">
+                        Mystery <span class="chip-count">3</span>
+                    </label>
+                    <label for="filter-adventure" class="genre-chip">
+                        Adventure <span class="chip-count">4</span>
+                    </label>
+                    <label for="filter-superhero" class="genre-chip">
+                        Superhero <span class="chip-count">3</span>
+                    </label>
+                    <label for="filter-horror" class="genre-chip">
+                        Horror <span class="chip-count">1</span>
+                    </label>
+                </div>
+
+                <!-- SPOTLIGHT BANNER -->
+                <div class="genre-highlight-box">
+                    <div>
+                        <h3>Looking for Curated Sagas?</h3>
+                        <p>Explore thematic collections like Superhero Universe, Indian Cinema, and Survival Stories.</p>
+                    </div>
+                    <a href="collection.html" class="genre-spotlight-btn">
+                        View Collections →
+                    </a>
+                </div>
+
+                <!-- MOVIE GRID (POPULATED ONLY FROM EXISTING MOVIES) -->
+                <div class="genre-movies-grid">
+
+                    <!-- 1. PRIMETIME -->
+                    <div class="genre-movie-item is-crime is-drama">
+                        <a href="details.html" class="genre-card">
+                            <div class="poster">
+                                <img src="images/trending1.jpg" alt="Primetime">
+                                <span class="genre-badge top-pick">TOP PICK</span>
+                                <span class="rating-badge">★ 7.2</span>
+                            </div>
+                            <div class="genre-card-info">
+                                <h3 class="genre-card-title">Primetime</h3>
+                                <div class="genre-card-meta">
+                                    <span>2026</span>
+                                    <span>•</span>
+                                    <span>1h 48m</span>
+                                </div>
+                                <span class="genre-card-tags">Crime • Drama</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- 2. LANTERNS -->
+                    <div class="genre-movie-item is-action is-drama is-crime is-scifi is-superhero">
+                        <a href="details1.html" class="genre-card">
+                            <div class="poster">
+                                <img src="images/show1.jpg" alt="Lanterns">
+                                <span class="genre-badge">SERIES</span>
+                                <span class="rating-badge">★ 8.4</span>
+                            </div>
+                            <div class="genre-card-info">
+                                <h3 class="genre-card-title">Lanterns</h3>
+                                <div class="genre-card-meta">
+                                    <span>2026</span>
+                                    <span>•</span>
+                                    <span>Season 1</span>
+                                </div>
+                                <span class="genre-card-tags">Superhero • Crime • Sci-Fi</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- 3. AVENGERS: ENDGAME -->
+                    <div class="genre-movie-item is-action is-scifi is-superhero is-adventure is-drama">
+                        <a href="details2.html" class="genre-card">
+                            <div class="poster">
+                                <img src="images/trending3.jpg" alt="Avengers: Endgame">
+                                <span class="genre-badge top-pick">BLOCKBUSTER</span>
+                                <span class="rating-badge">★ 8.4</span>
+                            </div>
+                            <div class="genre-card-info">
+                                <h3 class="genre-card-title">Avengers: Endgame</h3>
+                                <div class="genre-card-meta">
+                                    <span>2019</span>
+                                    <span>•</span>
+                                    <span>3h 01m</span>
+                                </div>
+                                <span class="genre-card-tags">Action • Sci-Fi • Superhero</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- 4. RESIDENT EVIL -->
+                    <div class="genre-movie-item is-horror is-action is-scifi">
+                        <a href="details3.html" class="genre-card">
+                            <div class="poster">
+                                <img src="images/trending4.jpg" alt="Resident Evil">
+                                <span class="genre-badge">SURVIVAL</span>
+                                <span class="rating-badge">★ 6.8</span>
+                            </div>
+                            <div class="genre-card-info">
+                                <h3 class="genre-card-title">Resident Evil</h3>
+                                <div class="genre-card-meta">
+                                    <span>2022</span>
+                                    <span>•</span>
+                                    <span>1h 47m</span>
+                                </div>
+                                <span class="genre-card-tags">Horror • Action • Sci-Fi</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- 5. DRISHYAM: THE CONCLUSION -->
+                    <div class="genre-movie-item is-crime is-mystery is-thriller is-drama">
+                        <a href="details4.html" class="genre-card">
+                            <div class="poster">
+                                <img src="images/trending5.jpg" alt="Drishyam: The Conclusion">
+                                <span class="genre-badge top-pick">CRITIC PICK</span>
+                                <span class="rating-badge">★ 8.6</span>
+                            </div>
+                            <div class="genre-card-info">
+                                <h3 class="genre-card-title">Drishyam: The Conclusion</h3>
+                                <div class="genre-card-meta">
+                                    <span>2021</span>
+                                    <span>•</span>
+                                    <span>2h 32m</span>
+                                </div>
+                                <span class="genre-card-tags">Crime • Mystery • Thriller</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- 6. HEART OF THE BEAST -->
+                    <div class="genre-movie-item is-action is-adventure is-drama">
+                        <a href="details5.html" class="genre-card">
+                            <div class="poster">
+                                <img src="images/newmovie2.jpg" alt="Heart of the Beast">
+                                <span class="genre-badge">SURVIVAL</span>
+                                <span class="rating-badge">★ 7.5</span>
+                            </div>
+                            <div class="genre-card-info">
+                                <h3 class="genre-card-title">Heart of the Beast</h3>
+                                <div class="genre-card-meta">
+                                    <span>2025</span>
+                                    <span>•</span>
+                                    <span>2h 05m</span>
+                                </div>
+                                <span class="genre-card-tags">Action • Adventure • Drama</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- 7. HOPE -->
+                    <div class="genre-movie-item is-mystery is-action is-drama">
+                        <a href="details6.html" class="genre-card">
+                            <div class="poster">
+                                <img src="images/newmovie3.jpg" alt="Hope">
+                                <span class="genre-badge">THRILLER</span>
+                                <span class="rating-badge">★ 7.9</span>
+                            </div>
+                            <div class="genre-card-info">
+                                <h3 class="genre-card-title">Hope</h3>
+                                <div class="genre-card-meta">
+                                    <span>2025</span>
+                                    <span>•</span>
+                                    <span>1h 56m</span>
+                                </div>
+                                <span class="genre-card-tags">Mystery • Action • Drama</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- 8. THE PARADISE -->
+                    <div class="genre-movie-item is-action is-drama is-thriller">
+                        <a href="details7.html" class="genre-card">
+                            <div class="poster">
+                                <img src="images/newmovie4.jpg" alt="The Paradise">
+                                <span class="genre-badge">INTENSE</span>
+                                <span class="rating-badge">★ 8.1</span>
+                            </div>
+                            <div class="genre-card-info">
+                                <h3 class="genre-card-title">The Paradise</h3>
+                                <div class="genre-card-meta">
+                                    <span>2025</span>
+                                    <span>•</span>
+                                    <span>2h 20m</span>
+                                </div>
+                                <span class="genre-card-tags">Action • Drama • Thriller</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- 9. THE VVAAN -->
+                    <div class="genre-movie-item is-adventure is-action">
+                        <a href="details8.html" class="genre-card">
+                            <div class="poster">
+                                <img src="images/newmovie5.jpg" alt="The Vvaan">
+                                <span class="genre-badge">FOLKLORE</span>
+                                <span class="rating-badge">★ 7.7</span>
+                            </div>
+                            <div class="genre-card-info">
+                                <h3 class="genre-card-title">The Vvaan</h3>
+                                <div class="genre-card-meta">
+                                    <span>2025</span>
+                                    <span>•</span>
+                                    <span>2h 15m</span>
+                                </div>
+                                <span class="genre-card-tags">Fantasy • Adventure • Action</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- 10. HUNKKAAR: THE ROAR -->
+                    <div class="genre-movie-item is-crime is-drama is-thriller">
+                        <a href="details9.html" class="genre-card">
+                            <div class="poster">
+                                <img src="images/show2.jpg" alt="Hunkkaar: The Roar">
+                                <span class="genre-badge">SERIES</span>
+                                <span class="rating-badge">★ 8.0</span>
+                            </div>
+                            <div class="genre-card-info">
+                                <h3 class="genre-card-title">Hunkkaar: The Roar</h3>
+                                <div class="genre-card-meta">
+                                    <span>2025</span>
+                                    <span>•</span>
+                                    <span>Season 1</span>
+                                </div>
+                                <span class="genre-card-tags">Crime • Drama • Thriller</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- 11. MONSTER: THE LIZZIE BORDEN STORY -->
+                    <div class="genre-movie-item is-crime is-drama is-mystery">
+                        <a href="details10.html" class="genre-card">
+                            <div class="poster">
+                                <img src="images/show3.jpg" alt="Monster: The Lizzie Borden Story">
+                                <span class="genre-badge">TRUE CRIME</span>
+                                <span class="rating-badge">★ 7.6</span>
+                            </div>
+                            <div class="genre-card-info">
+                                <h3 class="genre-card-title">Monster: Lizzie Borden</h3>
+                                <div class="genre-card-meta">
+                                    <span>2024</span>
+                                    <span>•</span>
+                                    <span>Mini-Series</span>
+                                </div>
+                                <span class="genre-card-tags">Crime • Drama • Mystery</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- 12. THE REVOLUTIONARIES -->
+                    <div class="genre-movie-item is-action is-drama">
+                        <a href="details11.html" class="genre-card">
+                            <div class="poster">
+                                <img src="images/show4.jpg" alt="The Revolutionaries">
+                                <span class="genre-badge">HISTORICAL</span>
+                                <span class="rating-badge">★ 8.2</span>
+                            </div>
+                            <div class="genre-card-info">
+                                <h3 class="genre-card-title">The Revolutionaries</h3>
+                                <div class="genre-card-meta">
+                                    <span>2025</span>
+                                    <span>•</span>
+                                    <span>Season 1</span>
+                                </div>
+                                <span class="genre-card-tags">Action • Drama • Historical</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- 13. BROTHERS -->
+                    <div class="genre-movie-item is-drama">
+                        <a href="details12.html" class="genre-card">
+                            <div class="poster">
+                                <img src="images/show5.jpg" alt="Brothers">
+                                <span class="genre-badge">FAMILY</span>
+                                <span class="rating-badge">★ 7.4</span>
+                            </div>
+                            <div class="genre-card-info">
+                                <h3 class="genre-card-title">Brothers</h3>
+                                <div class="genre-card-meta">
+                                    <span>2024</span>
+                                    <span>•</span>
+                                    <span>Season 1</span>
+                                </div>
+                                <span class="genre-card-tags">Drama • Comedy • Family</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- 14. AVENGERS DOOMSDAY -->
+                    <div class="genre-movie-item is-action is-scifi is-superhero is-adventure">
+                        <a href="details13.html" class="genre-card">
+                            <div class="poster">
+                                <img src="images/upcoming1.jpg" alt="Avengers Doomsday">
+                                <span class="genre-badge top-pick">UPCOMING</span>
+                                <span class="rating-badge">★ TBA</span>
+                            </div>
+                            <div class="genre-card-info">
+                                <h3 class="genre-card-title">Avengers Doomsday</h3>
+                                <div class="genre-card-meta">
+                                    <span>2026</span>
+                                    <span>•</span>
+                                    <span>In Theaters</span>
+                                </div>
+                                <span class="genre-card-tags">Action • Sci-Fi • Superhero</span>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+
+        <!-- === SIDEBAR === -->
+        <aside class="sidebar">
+            <div class="sidebar-title">
+                MENU
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="index.html">
+                    Explore
+                </a>
+
+                <a href="collection.html">
+                    Collection
+                </a>
+
+                <a href="genres.html" class="active">
+                    Genre
+                </a>
+
+                <a href="discover.html">
+                    Discover
+                </a>
+
+                <a href="top-imdb.html">
+                    Top IMDb Rated
+                </a>
+            </nav>
+
+            <div class="sidebar-divider"></div>
+
+            <!-- FEATURED GENRE SPOTLIGHT -->
+            <div class="featured-title">
+                Genre Spotlight
+            </div>
+
+            <div class="featured-card">
+                <div class="featured-poster">
+                    <img src="images/trending3.jpg" alt="Superhero Genre Spotlight">
+                    <span class="featured-rating">★ 8.4</span>
+                </div>
+
+                <div class="featured-content">
+                    <span class="featured-label">TRENDING GENRE</span>
+                    <h3>Superhero & Sci-Fi</h3>
+                    <div class="featured-meta">
+                        <span>Marvel</span>
+                        <span>•</span>
+                        <span>DC</span>
+                    </div>
+                    <p>
+                        High-stakes cosmic adventures, time travel, and heroic showdowns.
+                    </p>
+                    <a href="details2.html" class="featured-button">
+                        Explore Endgame
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- SITE FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="footer-left">
+                <p class="made-india">
+                    Made with ❤️ in India
+                </p>
+            </div>
+
+            <div class="footer-socials">
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" aria-label="Reddit"><i class="fa-brands fa-reddit-alien"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+            <p>
+                © 2026 CINE 🎬 PHILE. All Rights Reserved.
+            </p>
+
+            <nav class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="advertise.html">Advertise with Us</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+</html>
