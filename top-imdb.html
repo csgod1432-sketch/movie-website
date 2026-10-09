@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Top IMDb Rated Movies of All Time – Explore the greatest films ever made as ranked by IMDb ratings worldwide.">
+    <title>Top IMDb Rated – Cinephile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="top-imdb.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <a href="index.html" class="logo">
+        <span>CINE</span>
+        <span class="logo-icon">🎬</span>
+        <span>PHILE</span>
+    </a>
+    <div class="header-right">
+        <div class="search-box">
+            <span class="search-symbol">⌕</span>
+            <input type="text" placeholder="Search movies, shows..." id="imdb-search-input">
+        </div>
+        <div class="profile">C</div>
+    </div>
+</header>
+
+<nav class="home-collection-nav" aria-label="Main navigation">
+    <a href="index.html">Explore</a>
+    <a href="collection.html">Collections</a><a href="genres.html">Genres</a><a href="discover.html">Discover</a></nav>
+
+<div class="page-layout">
+    <main class="main-content">
+
+        <!-- HERO -->
+        <section class="imdb-hero">
+            <div class="imdb-hero-glow"></div>
+            <div class="imdb-hero-content">
+                <div class="imdb-hero-badge"><span class="imdb-star-icon">★</span> IMDb Top Rated</div>
+                <h1 class="imdb-hero-title">Greatest Films<br><span class="imdb-hero-accent">Of All Time</span></h1>
+                <p class="imdb-hero-desc">Handpicked from IMDb's official Top 250 — the most beloved and critically acclaimed movies across the globe, ranked by millions of real viewers worldwide.</p>
+                <div class="imdb-hero-stats">
+                    <div class="imdb-stat"><span class="imdb-stat-num">250</span><span class="imdb-stat-label">Top Films</span></div>
+                    <div class="imdb-stat-divider"></div>
+                    <div class="imdb-stat"><span class="imdb-stat-num">8.0+</span><span class="imdb-stat-label">Min Rating</span></div>
+                    <div class="imdb-stat-divider"></div>
+                    <div class="imdb-stat"><span class="imdb-stat-num">90M+</span><span class="imdb-stat-label">Global Votes</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FILTER BAR -->
+        <section class="imdb-filter-bar">
+            <div class="imdb-filter-tabs" id="genre-tabs">
+                <button class="imdb-tab active" data-genre="all">All</button>
+                <button class="imdb-tab" data-genre="drama">Drama</button>
+                <button class="imdb-tab" data-genre="crime">Crime</button>
+                <button class="imdb-tab" data-genre="action">Action</button>
+                <button class="imdb-tab" data-genre="scifi">Sci-Fi</button>
+                <button class="imdb-tab" data-genre="thriller">Thriller</button>
+                <button class="imdb-tab" data-genre="animation">Animation</button>
+                <button class="imdb-tab" data-genre="war">War</button>
+            </div>
+            <div class="imdb-sort-wrap">
+                <label class="imdb-sort-label" for="imdb-sort">Sort by</label>
+                <select class="imdb-sort-select" id="imdb-sort">
+                    <option value="rank">IMDb Rank</option>
+                    <option value="rating">Rating ↓</option>
+                    <option value="year-desc">Newest First</option>
+                    <option value="year-asc">Oldest First</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- RESULTS COUNT -->
+        <div class="results-bar">
+            <span id="results-count">Showing <strong>1–10</strong> of <strong>25</strong> films</span>
+        </div>
+
+        <!-- MOVIE LIST -->
+        <section class="content-section imdb-top10-section">
+            <div class="section-heading">
+                <h2 id="list-heading">⭐ IMDb Top 250 Worldwide</h2>
+                <a href="#" id="view-all-btn">View All 250 →</a>
+            </div>
+            <div class="movie-grid" id="imdb-movie-list"></div>
+
+            <!-- PAGINATION -->
+            <div class="imdb-pagination" id="pagination"></div>
+        </section>
+
+        <!-- GENRE GRID -->
+        <section class="content-section imdb-genre-section">
+            <div class="section-heading">
+                <h2>🎭 Browse by Genre</h2>
+                <a href="genres.html">Explore All</a>
+            </div>
+            <div class="imdb-genre-grid">
+                <div class="imdb-genre-card genre-drama" data-filter="drama"><div class="genre-icon">🎭</div><div class="genre-name">Drama</div></div>
+                <div class="imdb-genre-card genre-crime" data-filter="crime"><div class="genre-icon">🕵️</div><div class="genre-name">Crime</div></div>
+                <div class="imdb-genre-card genre-action" data-filter="action"><div class="genre-icon">💥</div><div class="genre-name">Action</div></div>
+                <div class="imdb-genre-card genre-scifi" data-filter="scifi"><div class="genre-icon">🚀</div><div class="genre-name">Sci-Fi</div></div>
+                <div class="imdb-genre-card genre-thriller" data-filter="thriller"><div class="genre-icon">🔪</div><div class="genre-name">Thriller</div></div>
+                <div class="imdb-genre-card genre-animation" data-filter="animation"><div class="genre-icon">✨</div><div class="genre-name">Animation</div></div>
+                <div class="imdb-genre-card genre-war" data-filter="war"><div class="genre-icon">⚔️</div><div class="genre-name">War</div></div>
+                <div class="imdb-genre-card genre-comedy" data-filter="comedy"><div class="genre-icon">😂</div><div class="genre-name">Comedy</div></div>
+            </div>
+        </section>
+
+        <!-- DIRECTORS -->
+        <section class="content-section imdb-directors-section">
+            <div class="section-heading">
+                <h2>🎬 Directors' Hall of Fame</h2>
+                <a href="discover.html">View All</a>
+            </div>
+            <div class="imdb-directors-grid">
+                <div class="director-card"><div class="director-avatar director-nolan">CN</div><div class="director-info"><div class="director-name">Christopher Nolan</div><div class="director-meta">5 films in Top 250</div></div><div class="director-best"><div class="director-best-label">Best</div><div class="director-best-title">The Dark Knight</div><div class="director-best-score">★ 9.0</div></div></div>
+                <div class="director-card"><div class="director-avatar director-coppola">FC</div><div class="director-info"><div class="director-name">Francis Ford Coppola</div><div class="director-meta">4 films in Top 250</div></div><div class="director-best"><div class="director-best-label">Best</div><div class="director-best-title">The Godfather</div><div class="director-best-score">★ 9.2</div></div></div>
+                <div class="director-card"><div class="director-avatar director-kubrick">SK</div><div class="director-info"><div class="director-name">Stanley Kubrick</div><div class="director-meta">6 films in Top 250</div></div><div class="director-best"><div class="director-best-label">Best</div><div class="director-best-title">2001: A Space Odyssey</div><div class="director-best-score">★ 8.3</div></div></div>
+                <div class="director-card"><div class="director-avatar director-spielberg">SS</div><div class="director-info"><div class="director-name">Steven Spielberg</div><div class="director-meta">7 films in Top 250</div></div><div class="director-best"><div class="director-best-label">Best</div><div class="director-best-title">Schindler's List</div><div class="director-best-score">★ 9.0</div></div></div>
+                <div class="director-card"><div class="director-avatar director-scorsese">MS</div><div class="director-info"><div class="director-name">Martin Scorsese</div><div class="director-meta">8 films in Top 250</div></div><div class="director-best"><div class="director-best-label">Best</div><div class="director-best-title">GoodFellas</div><div class="director-best-score">★ 8.7</div></div></div>
+                <div class="director-card"><div class="director-avatar director-miyazaki">HM</div><div class="director-info"><div class="director-name">Hayao Miyazaki</div><div class="director-meta">3 films in Top 250</div></div><div class="director-best"><div class="director-best-label">Best</div><div class="director-best-title">Spirited Away</div><div class="director-best-score">★ 8.6</div></div></div>
+            </div>
+        </section>
+
+        <!-- TRIVIA -->
+        <section class="imdb-trivia-strip">
+            <div class="trivia-item"><span class="trivia-icon">🏅</span><span class="trivia-text">Top 250 updated weekly by IMDb</span></div>
+            <div class="trivia-sep">·</div>
+            <div class="trivia-item"><span class="trivia-icon">🌍</span><span class="trivia-text">Voted by 90M+ global users</span></div>
+            <div class="trivia-sep">·</div>
+            <div class="trivia-item"><span class="trivia-icon">📅</span><span class="trivia-text">Films spanning 1921 – 2024</span></div>
+            <div class="trivia-sep">·</div>
+            <div class="trivia-item"><span class="trivia-icon">🎬</span><span class="trivia-text">Min 25,000 votes to qualify</span></div>
+        </section>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-title">MENU</div>
+        <nav class="sidebar-menu">
+            <a href="index.html">Explore</a>
+            <a href="collection.html">Collection</a>
+            <a href="discover.html">Discover</a>
+            <a href="genres.html">Genre</a>
+            <a href="top-imdb.html" class="active">IMDb Rated</a>
+        </nav>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-title">TOP 5 QUICK VIEW</div>
+        <div class="sidebar-imdb-mini">
+            <div class="mini-row"><span class="mini-rank">1</span><div class="mini-info"><div class="mini-title">The Shawshank Redemption</div><div class="mini-year">1994</div></div><span class="mini-score">9.3</span></div>
+            <div class="mini-row"><span class="mini-rank">2</span><div class="mini-info"><div class="mini-title">The Godfather</div><div class="mini-year">1972</div></div><span class="mini-score">9.2</span></div>
+            <div class="mini-row"><span class="mini-rank">3</span><div class="mini-info"><div class="mini-title">The Dark Knight</div><div class="mini-year">2008</div></div><span class="mini-score">9.0</span></div>
+            <div class="mini-row"><span class="mini-rank">4</span><div class="mini-info"><div class="mini-title">Schindler's List</div><div class="mini-year">1993</div></div><span class="mini-score">9.0</span></div>
+            <div class="mini-row"><span class="mini-rank">5</span><div class="mini-info"><div class="mini-title">12 Angry Men</div><div class="mini-year">1957</div></div><span class="mini-score">9.0</span></div>
+        </div>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-box imdb-info-box">
+            <span class="box-label">About IMDb Ratings</span>
+            <h3>How Rankings Work</h3>
+            <p>IMDb ratings use a Bayesian estimate formula, weighting votes from registered users. A minimum of 25,000 votes is required for Top 250 eligibility.</p>
+        </div>
+    </aside>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-top">
+        <div class="footer-left"><p class="made-india">Made with ❤️ in India</p></div>
+        <div class="footer-socials">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" aria-label="Reddit"><i class="fa-brands fa-reddit-alien"></i></a>
+        </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+        <p>© 2026 CINE 🎬 PHILE. All Rights Reserved.</p>
+        <nav class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="advertise.html">Advertise with Us</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </div>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════════
+     MOVIE DETAIL MODAL
+════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="movieModal">
+    <div class="modal-box">
+        <button class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></button>
+
+        <div class="modal-backdrop" id="modalBackdrop"></div>
+        <div class="modal-backdrop-fade"></div>
+
+        <div class="modal-body">
+
+            <!-- LEFT: Poster -->
+            <div class="modal-poster-col">
+                <div class="modal-poster">
+                    <img id="modalPoster" src="" alt="">
+                    <div class="modal-rating-circle" id="modalRatingCircle">
+                        <span class="mrc-star">★</span>
+                        <span class="mrc-score" id="modalRatingNum">0.0</span>
+                        <span class="mrc-label">IMDb</span>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button class="modal-act-btn primary" id="modalTrailerBtn"><i class="fa-solid fa-play"></i> Watch Trailer</button>
+                    <button class="modal-act-btn secondary"><i class="fa-regular fa-bookmark"></i> Watchlist</button>
+                </div>
+                <div class="modal-extra-info" id="modalExtra"></div>
+            </div>
+
+            <!-- RIGHT: Info -->
+            <div class="modal-info-col">
+
+                <div class="modal-rank-badge" id="modalRankBadge">#1</div>
+                <h2 class="modal-title" id="modalTitle">Movie Title</h2>
+                <div class="modal-meta-row" id="modalMeta"></div>
+                <div class="modal-genre-tags" id="modalGenres"></div>
+
+                <div class="modal-score-row">
+                    <div class="modal-score-block">
+                        <div class="msb-label">IMDb Rating</div>
+                        <div class="msb-value gold"><span id="modalScore">0.0</span><span class="msb-max">/10</span></div>
+                        <div class="msb-sub" id="modalVotes">— votes</div>
+                    </div>
+                    <div class="modal-score-block">
+                        <div class="msb-label">Your Rating</div>
+                        <div class="modal-stars" id="modalStars"></div>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <div class="modal-section-label">Plot</div>
+                    <p class="modal-plot" id="modalPlot"></p>
+                </div>
+
+                <div class="modal-divider"></div>
+
+                <div class="modal-credits" id="modalCredits"></div>
+
+                <div class="modal-divider"></div>
+
+                <div class="modal-section">
+                    <div class="modal-section-label">Awards & Recognition</div>
+                    <div class="modal-awards" id="modalAwards"></div>
+                </div>
+
+                <div class="modal-divider"></div>
+
+                <div class="modal-section">
+                    <div class="modal-section-label">More Details</div>
+                    <div class="modal-details-grid" id="modalDetails"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="movies-data-extended.js"></script>
+<script>
+// ─── DATA ────────────────────────────────────────────────────────
+const TMDB = 'https://image.tmdb.org/t/p/w500';
+const TMDB_BG = 'https://image.tmdb.org/t/p/w1280';
+
+const MOVIES = [
+    {
+        rank:1, title:"The Shawshank Redemption", year:1994, rating:9.3, votes:"2.9M",
+        runtime:"2h 22m", genres:["Drama","Hope"], genreKeys:["drama"],
+        director:"Frank Darabont", cast:["Tim Robbins","Morgan Freeman","Bob Gunton","William Sadler"],
+        plot:"Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency. Andy Dufresne, a banker wrongly convicted of murder, forges an unlikely friendship with veteran prisoner Ellis Boyd 'Red' Redding.",
+        poster: TMDB+"/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
+        backdrop: TMDB_BG+"/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg",
+        awards:"7 Oscar Nominations | AFI Top 100 | BAFTA Nominee",
+        language:"English", country:"USA", boxoffice:"$16M", release:"Sep 23, 1994",
+        tagline:"Fear can hold you prisoner. Hope can set you free.",
+        certificate:"R",
+        trailerUrl:"https://www.youtube.com/watch?v=6hB3S9bIaco"
+    },
+    {
+        rank:2, title:"The Godfather", year:1972, rating:9.2, votes:"2.0M",
+        runtime:"2h 55m", genres:["Crime","Drama"], genreKeys:["crime","drama"],
+        director:"Francis Ford Coppola", cast:["Marlon Brando","Al Pacino","James Caan","Robert Duvall"],
+        plot:"The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son. A sweeping epic of power, loyalty, and family.",
+        poster: TMDB+"/3bhkrj58Vtu7enYsLegHnDcdh9O.jpg",
+        backdrop: TMDB_BG+"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg",
+        awards:"3 Oscars Won (Best Picture, Director, Actor) | AFI #2 Greatest Film",
+        language:"English, Italian, Latin", country:"USA", boxoffice:"$250M", release:"Mar 24, 1972",
+        tagline:"An offer you can't refuse.",
+        certificate:"R",
+        trailerUrl:"https://www.youtube.com/watch?v=UaVTIH8mujA"
+    },
+    {
+        rank:3, title:"The Godfather Part II", year:1974, rating:9.0, votes:"1.4M",
+        runtime:"3h 22m", genres:["Crime","Drama"], genreKeys:["crime","drama"],
+        director:"Francis Ford Coppola", cast:["Al Pacino","Robert De Niro","Robert Duvall","Diane Keaton"],
+        plot:"The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son Michael expands and tightens his grip on the family's crime syndicate.",
+        poster: TMDB+"/hek3koDUyRQk7FIhPXsa6mT2Zc3.jpg",
+        backdrop: TMDB_BG+"/poFk6EwHGdKkCBs8ced5z7axoEM.jpg",
+        awards:"6 Oscars Won including Best Picture | AFI Top 100",
+        language:"English, Italian, Sicilian", country:"USA", boxoffice:"$57M", release:"Dec 20, 1974",
+        tagline:"The continuing saga of the Corleone crime family.",
+        certificate:"R",
+        trailerUrl:"https://www.youtube.com/watch?v=9O1Iy9od7-A"
+    },
+    {
+        rank:4, title:"The Dark Knight", year:2008, rating:9.0, votes:"2.9M",
+        runtime:"2h 32m", genres:["Action","Crime","Thriller"], genreKeys:["action","crime","thriller"],
+        director:"Christopher Nolan", cast:["Christian Bale","Heath Ledger","Aaron Eckhart","Michael Caine"],
+        plot:"When the menace known as the Joker wreaks havoc and chaos on Gotham City, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+        poster: TMDB+"/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+        backdrop: TMDB_BG+"/hkBaDkMWbLaf8B1lsWsKX7Ew3Xq.jpg",
+        awards:"2 Oscars Won (Best Supporting Actor – Heath Ledger) | 8 Oscar Nominations",
+        language:"English, Mandarin", country:"USA, UK", boxoffice:"$1.005B", release:"Jul 18, 2008",
+        tagline:"Why so serious?",
+        certificate:"PG-13",
+        trailerUrl:"https://www.youtube.com/watch?v=EXeTwQWrcwY"
+    },
+    {
+        rank:5, title:"Schindler's List", year:1993, rating:9.0, votes:"1.5M",
+        runtime:"3h 15m", genres:["Drama","History","War"], genreKeys:["drama","war"],
+        director:"Steven Spielberg", cast:["Liam Neeson","Ralph Fiennes","Ben Kingsley","Caroline Goodall"],
+        plot:"In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.",
+        poster: TMDB+"/sF1U4EUQS8YHUYjNl3pMGNIQyr0.jpg",
+        backdrop: TMDB_BG+"/loRmRzQXZeqG78TqZuyvSlEQfZb.jpg",
+        awards:"7 Oscars Won including Best Picture & Director | AFI #8 Greatest Film",
+        language:"English, German, Hebrew, Polish", country:"USA", boxoffice:"$322M", release:"Dec 15, 1993",
+        tagline:"Whoever saves one life, saves the world entire.",
+        certificate:"R",
+        trailerUrl:"https://www.youtube.com/watch?v=gG22XNhtnoY"
+    },
+    {
+        rank:6, title:"12 Angry Men", year:1957, rating:9.0, votes:"870K",
+        runtime:"1h 36m", genres:["Drama","Crime"], genreKeys:["drama","crime"],
+        director:"Sidney Lumet", cast:["Henry Fonda","Lee J. Cobb","Ed Begley","Martin Balsam"],
+        plot:"The jury in a New York City murder trial is frustrated by a single member whose skeptical, independent-minded attitude forces them to reconsider the evidence in a new light.",
+        poster: TMDB+"/ow3wq89wM8qd5X7hWKxiRfsFf9C.jpg",
+        backdrop: TMDB_BG+"/qqHQsStV6exghCM7zbObuYBiYxw.jpg",
+        awards:"3 Oscar Nominations including Best Picture | Cannes Golden Bear",
+        language:"English", country:"USA", boxoffice:"$1.3M", release:"Apr 13, 1957",
+        tagline:"Life is in their hands — Death is on their minds!",
+        certificate:"NR",
+        trailerUrl:"https://www.youtube.com/watch?v=TEN-2uTi2c0"
+    },
+    {
+        rank:7, title:"LOTR: The Return of the King", year:2003, rating:9.0, votes:"1.9M",
+        runtime:"3h 21m", genres:["Adventure","Drama","Fantasy"], genreKeys:["drama","action"],
+        director:"Peter Jackson", cast:["Elijah Wood","Viggo Mortensen","Ian McKellen","Orlando Bloom"],
+        plot:"Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+        poster: TMDB+"/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg",
+        backdrop: TMDB_BG+"/lXhgCODAbBXL5buk9yEmTpOoOgR.jpg",
+        awards:"11 Oscars Won (Sweep) including Best Picture — All 11 nominations won",
+        language:"English, Sindarin", country:"New Zealand, USA", boxoffice:"$1.147B", release:"Dec 17, 2003",
+        tagline:"The Eye of the Enemy is moving.",
+        certificate:"PG-13",
+        trailerUrl:"https://www.youtube.com/watch?v=r5X-hFf6Bwo"
+    },
+    {
+        rank:8, title:"Pulp Fiction", year:1994, rating:8.9, votes:"2.2M",
+        runtime:"2h 34m", genres:["Crime","Drama"], genreKeys:["crime","drama","thriller"],
+        director:"Quentin Tarantino", cast:["John Travolta","Samuel L. Jackson","Uma Thurman","Bruce Willis"],
+        plot:"The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of bandits intertwine in four tales of violence and redemption.",
+        poster: TMDB+"/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg",
+        backdrop: TMDB_BG+"/suaEOtk1N1sgg2MTM7oZd2cfVp3.jpg",
+        awards:"1 Oscar Won (Best Original Screenplay) | Palme d'Or at Cannes",
+        language:"English, Spanish, French", country:"USA", boxoffice:"$214M", release:"Oct 14, 1994",
+        tagline:"You won't know the facts until you've seen the fiction.",
+        certificate:"R",
+        trailerUrl:"https://www.youtube.com/watch?v=s7EdQ4FqbhY"
+    },
+    {
+        rank:9, title:"LOTR: The Fellowship of the Ring", year:2001, rating:8.9, votes:"1.9M",
+        runtime:"3h 28m", genres:["Adventure","Drama","Fantasy"], genreKeys:["drama","action"],
+        director:"Peter Jackson", cast:["Elijah Wood","Ian McKellen","Viggo Mortensen","Sean Astin"],
+        plot:"A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle Earth from the Dark Lord Sauron.",
+        poster: TMDB+"/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg",
+        backdrop: TMDB_BG+"/mfwq2nMBzArzQ7Y9RKE8SKeeTkg.jpg",
+        awards:"4 Oscars Won | 13 Oscar Nominations including Best Picture",
+        language:"English, Sindarin, Old English", country:"New Zealand, USA", boxoffice:"$898M", release:"Dec 19, 2001",
+        tagline:"One ring to rule them all.",
+        certificate:"PG-13",
+        trailerUrl:"https://www.youtube.com/watch?v=V75dMMIW2B4"
+    },
+    {
+        rank:10, title:"The Good, the Bad and the Ugly", year:1966, rating:8.8, votes:"780K",
+        runtime:"2h 58m", genres:["Adventure","Western"], genreKeys:["action","drama"],
+        director:"Sergio Leone", cast:["Clint Eastwood","Eli Wallach","Lee Van Cleef"],
+        plot:"A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a Confederate soldier's stash of gold buried in a remote cemetery.",
+        poster: TMDB+"/bX2xnavhMYjWDoZp1VM6VnU1xwe.jpg",
+        backdrop: TMDB_BG+"/52MgnWhD3FN01r5N04l7pjZnbeI.jpg",
+        awards:"AFI Top 100 | Considered greatest Western ever made",
+        language:"Italian, English, Spanish", country:"Italy, Spain", boxoffice:"$25.1M", release:"Dec 23, 1966",
+        tagline:"For three men the Civil War wasn't hell. It was practice!",
+        certificate:"R",
+        trailerUrl:"https://www.youtube.com/watch?v=WCN5JJY_wiA"
+    },
+    {
+        rank:11, title:"Inception", year:2010, rating:8.8, votes:"2.5M",
+        runtime:"2h 28m", genres:["Action","Sci-Fi","Thriller"], genreKeys:["action","scifi","thriller"],
+        director:"Christopher Nolan", cast:["Leonardo DiCaprio","Joseph Gordon-Levitt","Elliot Page","Tom Hardy"],
+        plot:"A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project.",
+        poster: TMDB+"/edv5CZvWj09upOsy2Y6IwDhK8bt.jpg",
+        backdrop: TMDB_BG+"/s3TBrRGB1iav7gFOCNx3H31MoES.jpg",
+        awards:"4 Oscars Won | 8 Oscar Nominations | BAFTA Winner",
+        language:"English, Japanese, French", country:"USA, UK", boxoffice:"$836M", release:"Jul 16, 2010",
+        tagline:"Your mind is the scene of the crime.",
+        certificate:"PG-13",
+        trailerUrl:"https://www.youtube.com/watch?v=YoHD9XEInc0"
+    },
+    {
+        rank:12, title:"Forrest Gump", year:1994, rating:8.8, votes:"2.2M",
+        runtime:"2h 22m", genres:["Drama","Romance"], genreKeys:["drama"],
+        director:"Robert Zemeckis", cast:["Tom Hanks","Robin Wright","Gary Sinise","Mykelti Williamson"],
+        plot:"The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal and other historical events unfold through the perspective of an Alabama man with an IQ of 75.",
+        poster: TMDB+"/arw2vcBveWOVZr6pxd9XTd1TdQa.jpg",
+        backdrop: TMDB_BG+"/y3yvn3SjvJHAEBgQHaXYuWsLRU.jpg",
+        awards:"6 Oscars Won including Best Picture, Actor (Tom Hanks), Director",
+        language:"English", country:"USA", boxoffice:"$678M", release:"Jul 6, 1994",
+        tagline:"Life is like a box of chocolates.",
+        certificate:"PG-13",
+        trailerUrl:"https://www.youtube.com/watch?v=bLvqoHBptjg"
+    },
+    {
+        rank:13, title:"Fight Club", year:1999, rating:8.8, votes:"2.2M",
+        runtime:"2h 19m", genres:["Drama","Thriller"], genreKeys:["drama","thriller"],
+        director:"David Fincher", cast:["Brad Pitt","Edward Norton","Helena Bonham Carter","Meat Loaf"],
+        plot:"An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into an anarchist organization.",
+        poster: TMDB+"/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg",
+        backdrop: TMDB_BG+"/hZkgoQYus5vegHoetLkCJzb17zJ.jpg",
+        awards:"BAFTA Nominee | AFI Top 100 | Empire Greatest Films Ever",
+        language:"English", country:"USA, Germany", boxoffice:"$101M", release:"Oct 15, 1999",
+        tagline:"Mischief. Mayhem. Soap.",
+        certificate:"R",
+        trailerUrl:"https://www.youtube.com/watch?v=SUXWAEX2jlg"
+    },
+    {
+        rank:14, title:"GoodFellas", year:1990, rating:8.7, votes:"1.2M",
+        runtime:"2h 26m", genres:["Crime","Drama","Biography"], genreKeys:["crime","drama"],
+        director:"Martin Scorsese", cast:["Ray Liotta","Robert De Niro","Joe Pesci","Lorraine Bracco"],
+        plot:"The story of Henry Hill and his life in the mob, covering his relationship with his wife Karen and his mob partners Jimmy Conway and Tommy DeVito.",
+        poster: TMDB+"/6QMSLvU5ziIL2T6VrkaKzC3GX0L.jpg",
+        backdrop: TMDB_BG+"/sw7mordbZxgITU877yTpZCud90M.jpg",
+        awards:"1 Oscar Won (Best Supporting Actor – Joe Pesci) | 6 Oscar Nominations",
+        language:"English", country:"USA", boxoffice:"$46.8M", release:"Sep 19, 1990",
+        tagline:"Three Decades of Life in the Mafia.",
+        certificate:"R",
+        trailerUrl:"https://www.youtube.com/watch?v=2ilzidi_J8Q"
+    },
+    {
+        rank:15, title:"The Matrix", year:1999, rating:8.7, votes:"2.1M",
+        runtime:"2h 16m", genres:["Action","Sci-Fi"], genreKeys:["action","scifi"],
+        director:"The Wachowskis", cast:["Keanu Reeves","Laurence Fishburne","Carrie-Anne Moss","Hugo Weaving"],
+        plot:"When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth — that reality as he knows it is a simulation controlled by machines.",
+        poster: TMDB+"/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg",
+        backdrop: TMDB_BG+"/fNG7i7RqMErkcqhohV2a6cV1Ehy.jpg",
+        awards:"4 Oscars Won | Revolutionized action film visual effects",
+        language:"English", country:"USA, Australia", boxoffice:"$467M", release:"Mar 31, 1999",
+        tagline:"Free your mind.",
+        certificate:"R",
+        trailerUrl:"https://www.youtube.com/watch?v=vKQi3bBA1y8"
+    },
+    {
+        rank:16, title:"Star Wars: The Empire Strikes Back", year:1980, rating:8.7, votes:"1.4M",
+        runtime:"2h 4m", genres:["Action","Adventure","Fantasy"], genreKeys:["action","scifi"],
+        director:"Irvin Kershner", cast:["Mark Hamill","Harrison Ford","Carrie Fisher","Billy Dee Williams"],
+        plot:"After the Galactic Empire overpowers the Rebel Alliance, Luke Skywalker begins his Jedi training with Yoda, while his friends are pursued across the galaxy.",
+        poster: TMDB+"/2l05cFWJacyIsTpsqSgH0wQXe4V.jpg",
+        backdrop: TMDB_BG+"/mEkdLmHBMHFMVSoTPhlVAEBJM5e.jpg",
+        awards:"Special Oscar for Sound & Visual Effects | AFI Top 100",
+        language:"English", country:"USA", boxoffice:"$547M", release:"May 21, 1980",
+        tagline:"The adventure continues...",
+        certificate:"PG",
+        trailerUrl:"https://www.youtube.com/watch?v=JNwNRlEV98c"
+    },
+    {
+        rank:17, title:"Interstellar", year:2014, rating:8.7, votes:"2.1M",
+        runtime:"2h 49m", genres:["Adventure","Drama","Sci-Fi"], genreKeys:["scifi","drama","action"],
+        director:"Christopher Nolan", cast:["Matthew McConaughey","Anne Hathaway","Jessica Chastain","Michael Caine"],
+        plot:"A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival as Earth faces climate catastrophe.",
+        poster: TMDB+"/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+        backdrop: TMDB_BG+"/xJHokMbljvjADYdit5fK5VQsXEG.jpg",
+        awards:"1 Oscar Won (Best Visual Effects) | 5 Oscar Nominations",
+        language:"English", country:"USA, UK, Canada", boxoffice:"$773M", release:"Nov 7, 2014",
+        tagline:"Mankind was born on Earth. It was never meant to die here.",
+        certificate:"PG-13",
+        trailerUrl:"https://www.youtube.com/watch?v=zSWdZVtXT7E"
+    },
+    {
+        rank:18, title:"Spirited Away", year:2001, rating:8.6, votes:"820K",
+        runtime:"2h 5m", genres:["Animation","Adventure","Family"], genreKeys:["animation"],
+        director:"Hayao Miyazaki", cast:["Daveigh Chase","Suzanne Pleshette","Miyu Irino","Rumi Hiiragi"],
+        plot:"During her family's move to the suburbs, a sulky 10-year-old girl wanders into a world ruled by gods, witches, and spirits, where humans are changed into beasts.",
+        poster: TMDB+"/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg",
+        backdrop: TMDB_BG+"/Ab8mkyvkiq65dEoR3QVbFhDr0dW.jpg",
+        awards:"1 Oscar Won (Best Animated Feature) | Berlin Golden Bear",
+        language:"Japanese", country:"Japan", boxoffice:"$395M", release:"Jul 20, 2001",
+        tagline:"Enter a world where fantasy has no limits.",
+        certificate:"PG",
+        trailerUrl:"https://www.youtube.com/watch?v=ByXuk9QqQkk"
+    },
+    {
+        rank:19, title:"The Silence of the Lambs", year:1991, rating:8.6, votes:"1.4M",
+        runtime:"1h 58m", genres:["Crime","Drama","Thriller"], genreKeys:["crime","thriller","drama"],
+        director:"Jonathan Demme", cast:["Jodie Foster","Anthony Hopkins","Scott Glenn","Ted Levine"],
+        plot:"A young FBI cadet must receive the help of an incarcerated and manipulative cannibal killer to help catch another serial killer, a madman who skins his victims.",
+        poster: TMDB+"/rplLJ2hPcOQmkFhTqUte0MkosOB.jpg",
+        backdrop: TMDB_BG+"/mfwq2nMBzArzQ7Y9RKE8SKeeTkg.jpg",
+        awards:"5 Oscars Won (Sweep of top 5 categories) including Best Picture, Actor, Actress",
+        language:"English", country:"USA", boxoffice:"$272M", release:"Feb 14, 1991",
+        tagline:"To enter the mind of a killer she must challenge the mind of a madman.",
+        certificate:"R",
+        trailerUrl:"https://www.youtube.com/watch?v=W6Mm8Sbe__o"
+    },
+    {
+        rank:20, title:"Saving Private Ryan", year:1998, rating:8.6, votes:"1.4M",
+        runtime:"2h 49m", genres:["Drama","War","History"], genreKeys:["drama","war"],
+        director:"Steven Spielberg", cast:["Tom Hanks","Matt Damon","Tom Sizemore","Edward Burns"],
+        plot:"Following the Normandy Landings, a group of U.S. soldiers go behind enemy lines to retrieve a paratrooper whose brothers have been killed in action.",
+        poster: TMDB+"/uqx37cS8cpHg8U35f9U5IBlrCV3.jpg",
+        backdrop: TMDB_BG+"/hHbJcqYUimNHBU3BZNXN38cBYdB.jpg",
+        awards:"5 Oscars Won including Best Director & Cinematography | AFI Top 100",
+        language:"English, German, French", country:"USA", boxoffice:"$482M", release:"Jul 24, 1998",
+        tagline:"The mission is a man.",
+        certificate:"R",
+        trailerUrl:"https://www.youtube.com/watch?v=9CiW_DgxCnQ"
+    },
+    {
+        rank:21, title:"The Green Mile", year:1999, rating:8.6, votes:"1.3M",
+        runtime:"3h 9m", genres:["Crime","Drama","Fantasy"], genreKeys:["drama","crime"],
+        director:"Frank Darabont", cast:["Tom Hanks","Michael Clarke Duncan","David Morse","Bonnie Hunt"],
+        plot:"The lives of guards on Death Row are affected by one of their charges: a black man accused of child murder and rape, yet who has a mysterious gift.",
+        poster: TMDB+"/velWPhVMQeQKcxggNEU8YmU1xZa.jpg",
+        backdrop: TMDB_BG+"/l6hQWH9eDzsW1G7ANEwqEdShpax.jpg",
+        awards:"4 Oscar Nominations including Best Picture",
+        language:"English", country:"USA", boxoffice:"$286M", release:"Dec 10, 1999",
+        tagline:"Miracles do happen.",
+        certificate:"R",
+        trailerUrl:"https://www.youtube.com/watch?v=Ki4haFrqSrw"
+    },
+    {
+        rank:22, title:"Parasite", year:2019, rating:8.5, votes:"890K",
+        runtime:"2h 12m", genres:["Comedy","Drama","Thriller"], genreKeys:["drama","thriller","comedy"],
+        director:"Bong Joon-ho", cast:["Song Kang-ho","Lee Sun-kyun","Cho Yeo-jeong","Choi Woo-shik"],
+        plot:"Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
+        poster: TMDB+"/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
+        backdrop: TMDB_BG+"/TU9NIjwzjoKPwQHoHshkFcQUCG.jpg",
+        awards:"4 Oscars Won including Best Picture & International Film | Palme d'Or",
+        language:"Korean, English", country:"South Korea", boxoffice:"$263M", release:"May 30, 2019",
+        tagline:"Act like you own the place.",
+        certificate:"R",
+        trailerUrl:"https://www.youtube.com/watch?v=5xH0HfJHsaY"
+    },
+    {
+        rank:23, title:"The Prestige", year:2006, rating:8.5, votes:"1.3M",
+        runtime:"2h 10m", genres:["Drama","Mystery","Thriller"], genreKeys:["thriller","drama"],
+        director:"Christopher Nolan", cast:["Christian Bale","Hugh Jackman","Scarlett Johansson","Michael Caine"],
+        plot:"After a tragic accident, two stage magicians engage in a battle to create the ultimate illusion while sacrificing everything they have to outwit the other.",
+        poster: TMDB+"/tRNlZbgNCNOpLpbAbhot6tpisUN.jpg",
+        backdrop: TMDB_BG+"/rhEWDEBaKE4E1rGgTdAQNDaFEZi.jpg",
+        awards:"2 Oscar Nominations | AFI Best Thriller Nominee",
+        language:"English", country:"USA, UK", boxoffice:"$109M", release:"Oct 20, 2006",
+        tagline:"Are you watching closely?",
+        certificate:"PG-13",
+        trailerUrl:"https://www.youtube.com/watch?v=o4gHRs8hBJg"
+    },
+    {
+        rank:24, title:"Se7en", year:1995, rating:8.6, votes:"1.7M",
+        runtime:"2h 7m", genres:["Crime","Drama","Mystery"], genreKeys:["crime","thriller","drama"],
+        director:"David Fincher", cast:["Brad Pitt","Morgan Freeman","Kevin Spacey","Gwyneth Paltrow"],
+        plot:"Two detectives, a rookie and a veteran, hunt a serial killer who uses the seven deadly sins as his motives.",
+        poster: TMDB+"/6yoghtyTpznpBik8EngEmJskVPo.jpg",
+        backdrop: TMDB_BG+"/HknDCqDLdNDJFTK8Al5RVdxRsf.jpg",
+        awards:"BAFTA Winner (Best Editing) | Empire Top 10 All Time",
+        language:"English", country:"USA", boxoffice:"$327M", release:"Sep 22, 1995",
+        tagline:"Long is the way and hard, that out of Hell leads up to light.",
+        certificate:"R",
+        trailerUrl:"https://www.youtube.com/watch?v=znmZoVkCjpI"
+    },
+    {
+        rank:25, title:"The Lion King", year:1994, rating:8.5, votes:"1.1M",
+        runtime:"1h 28m", genres:["Animation","Adventure","Drama"], genreKeys:["animation","drama"],
+        director:"Roger Allers, Rob Minkoff", cast:["Matthew Broderick","Jeremy Irons","James Earl Jones","Nathan Lane"],
+        plot:"Lion prince Simba and his father are targeted by his scheming uncle, who wants to ascend the throne himself. Simba flees in shame but ultimately must face his destiny.",
+        poster: TMDB+"/sKCr78MXSLixwmZ8DyJLrpMsd15.jpg",
+        backdrop: TMDB_BG+"/wXiqBaxKQtKkRSUmxBmERFJUAb8.jpg",
+        awards:"2 Oscars Won (Best Original Score & Song) | AFI Top 100 | Golden Globe",
+        language:"English", country:"USA", boxoffice:"$987M", release:"Jun 24, 1994",
+        tagline:"Life's greatest adventure is finding your place in the Circle of Life.",
+        certificate:"G",
+        trailerUrl:"https://www.youtube.com/watch?v=4sj1MT05lAA"
+    }
+];
+
+// ─── MERGE EXTENDED MOVIES (Ranks 26-250) ─────────────────────────
+if (typeof MOVIES_EXTENDED !== 'undefined') {
+    MOVIES_EXTENDED.forEach(m => {
+        // Fix poster/backdrop URLs if using EXT constants
+        if (m.poster && m.poster.startsWith('https://')) {
+            // already full URL, keep as is
+        } else if (m.poster) {
+            m.poster = TMDB + m.poster;
+        }
+        if (m.backdrop && m.backdrop.startsWith('https://')) {
+            // already full URL
+        } else if (m.backdrop) {
+            m.backdrop = TMDB_BG + m.backdrop;
+        }
+        MOVIES.push(m);
+    });
+} else {
+    // Fallback: generate placeholder movies if external file not loaded
+    const baseMovies = [...MOVIES];
+    for (let i = 26; i <= 250; i++) {
+        const base = baseMovies[(i - 1) % 25];
+        MOVIES.push({
+            ...base,
+            rank: i,
+            title: base.title + " (Classic " + i + ")",
+            rating: (8.5 - (i * 0.005)).toFixed(1),
+            votes: Math.floor(Math.random() * 500 + 500) + "K"
+        });
+    }
+}
+
+// ─── GENRE COUNTS REMOVED ──────────────────────────────────────────
+
+// ─── STATE ────────────────────────────────────────────────────────
+let currentPage = 1;
+const PER_PAGE = 10;
+let filtered = [...MOVIES];
+let userRatings = {};
+
+// ─── RENDER LIST ─────────────────────────────────────────────────
+function renderList() {
+    const list = document.getElementById('imdb-movie-list');
+    const start = (currentPage - 1) * PER_PAGE;
+    const end = Math.min(start + PER_PAGE, filtered.length);
+    const pageMovies = filtered.slice(start, end);
+
+    if (pageMovies.length === 0) {
+        list.innerHTML = '<div class="no-results"><i class="fa-solid fa-film"></i><p>No movies found matching your criteria.</p></div>';
+        renderPagination();
+        updateResultsCount(0, 0, 0);
+        return;
+    }
+
+    list.innerHTML = pageMovies.map((m, i) => `
+        <div class="movie-card" data-rank="${m.rank}" onclick="openModal(${m.rank - 1})" style="cursor: pointer;">
+            <div class="poster">
+                <img src="${m.poster}" alt="${m.title}"
+                    onerror="this.onerror=null;this.src='https://via.placeholder.com/300x450/1a1a22/7b28db?text=🎬'">
+                <span class="status-badge" style="background: rgba(123,40,219,0.9); color: white;">#${m.rank}</span>
+                <span class="rating-badge">★ ${m.rating}</span>
+                <a href="javascript:void(0)" class="info-btn"><i class="fa-solid fa-circle-info"></i></a>
+            </div>
+            <h3 style="margin-top: 10px; color: #d8d8dd; font-size: 16px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${m.title}</h3>
+            <div class="movie-meta">
+                <span>${m.year}</span>
+                <span>•</span>
+                <span>${m.genres[0]}</span>
+            </div>
+        </div>
+    `).join('');
+
+    updateResultsCount(start + 1, end, filtered.length);
+    renderPagination();
+}
+
+// ─── PAGINATION ───────────────────────────────────────────────────
+function renderPagination() {
+    const totalPages = Math.ceil(filtered.length / PER_PAGE);
+    const pg = document.getElementById('pagination');
+    if (totalPages <= 1) { pg.innerHTML = ''; return; }
+
+    let html = '';
+
+    // Prev button
+    html += `<button class="pg-btn ${currentPage === 1 ? 'disabled' : ''}" onclick="goPage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>
+        <i class="fa-solid fa-chevron-left"></i> Prev
+    </button>`;
+
+    // Page numbers
+    const range = getPageRange(currentPage, totalPages);
+    range.forEach(p => {
+        if (p === '...') {
+            html += `<span class="pg-ellipsis">…</span>`;
+        } else {
+            html += `<button class="pg-num ${p === currentPage ? 'active' : ''}" onclick="goPage(${p})">${p}</button>`;
+        }
+    });
+
+    // Next button
+    html += `<button class="pg-btn ${currentPage === totalPages ? 'disabled' : ''}" onclick="goPage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>
+        Next <i class="fa-solid fa-chevron-right"></i>
+    </button>`;
+
+    pg.innerHTML = html;
+}
+
+function getPageRange(current, total) {
+    const range = [];
+    if (total <= 7) {
+        for (let i = 1; i <= total; i++) range.push(i);
+    } else {
+        range.push(1);
+        if (current > 3) range.push('...');
+        for (let i = Math.max(2, current - 1); i <= Math.min(total - 1, current + 1); i++) range.push(i);
+        if (current < total - 2) range.push('...');
+        range.push(total);
+    }
+    return range;
+}
+
+function goPage(p) {
+    const totalPages = Math.ceil(filtered.length / PER_PAGE);
+    if (p < 1 || p > totalPages) return;
+    currentPage = p;
+    renderList();
+    document.getElementById('imdb-movie-list').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function updateResultsCount(from, to, total) {
+    const el = document.getElementById('results-count');
+    if (el) el.innerHTML = `Showing <strong>${from}–${to}</strong> of <strong>${total}</strong> films`;
+}
+
+// ─── FILTERING ────────────────────────────────────────────────────
+function applyFilter() {
+    const activeGenre = document.querySelector('.imdb-tab.active')?.dataset.genre || 'all';
+    const searchQ = document.getElementById('imdb-search-input').value.toLowerCase().trim();
+    const sortVal = document.getElementById('imdb-sort').value;
+
+    filtered = MOVIES.filter(m => {
+        const genreMatch = activeGenre === 'all' || m.genreKeys.some(g => g.includes(activeGenre));
+        const searchMatch = !searchQ || m.title.toLowerCase().includes(searchQ) || m.director.toLowerCase().includes(searchQ);
+        return genreMatch && searchMatch;
+    });
+
+    filtered.sort((a, b) => {
+        if (sortVal === 'rank') return a.rank - b.rank;
+        if (sortVal === 'rating') return b.rating - a.rating;
+        if (sortVal === 'year-desc') return b.year - a.year;
+        if (sortVal === 'year-asc') return a.year - b.year;
+        return 0;
+    });
+
+    currentPage = 1;
+    renderList();
+}
+
+// ─── TABS ─────────────────────────────────────────────────────────
+document.querySelectorAll('.imdb-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        document.querySelectorAll('.imdb-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        applyFilter();
+    });
+});
+
+document.querySelectorAll('.imdb-genre-card').forEach(card => {
+    card.addEventListener('click', () => {
+        const f = card.dataset.filter;
+        document.querySelectorAll('.imdb-tab').forEach(t => {
+            t.classList.toggle('active', t.dataset.genre === f);
+        });
+        applyFilter();
+        document.getElementById('imdb-movie-list').scrollIntoView({ behavior: 'smooth' });
+    });
+});
+
+document.getElementById('imdb-sort').addEventListener('change', applyFilter);
+document.getElementById('imdb-search-input').addEventListener('input', applyFilter);
+
+// ─── MODAL ────────────────────────────────────────────────────────
+function openModal(index) {
+    // find the movie by its index in the MOVIES array
+    const m = MOVIES[index];
+    if (!m) return;
+
+    // Backdrop
+    const bd = document.getElementById('modalBackdrop');
+    bd.style.backgroundImage = `url('${m.backdrop}')`;
+
+    // Basic
+    document.getElementById('modalPoster').src = m.poster;
+    document.getElementById('modalPoster').onerror = function(){ this.src='https://via.placeholder.com/300x450/1a1a22/f5c518?text=🎬'; };
+    document.getElementById('modalTitle').textContent = m.title;
+    document.getElementById('modalRankBadge').textContent = `#${m.rank}`;
+    document.getElementById('modalRatingNum').textContent = m.rating;
+    document.getElementById('modalScore').textContent = m.rating;
+    document.getElementById('modalVotes').textContent = m.votes + ' votes';
+    document.getElementById('modalPlot').textContent = m.plot;
+
+    // Trailer
+    document.getElementById('modalTrailerBtn').onclick = () => {
+        if (m.trailerUrl) {
+            window.open(m.trailerUrl, '_blank');
+        } else {
+            window.open(`https://www.youtube.com/results?search_query=${encodeURIComponent(m.title + ' ' + m.year + ' official trailer')}`, '_blank');
+        }
+    };
+
+    // Meta
+    document.getElementById('modalMeta').innerHTML = `
+        <span class="mm-cert">${m.certificate || 'NR'}</span>
+        <span>${m.year}</span>
+        <span>•</span>
+        <span>${m.runtime}</span>
+        <span>•</span>
+        <span class="mm-lang">${m.language.split(',')[0]}</span>
+    `;
+
+    // Genres
+    document.getElementById('modalGenres').innerHTML = m.genres.map(g => `<span class="modal-genre-tag">${g}</span>`).join('');
+
+    // Stars
+    const sr = userRatings[m.rank] || 0;
+    document.getElementById('modalStars').innerHTML = [1,2,3,4,5,6,7,8,9,10].map(s =>
+        `<span class="star-btn ${s <= sr ? 'lit' : ''}" data-val="${s}" onclick="rateMovie(${m.rank}, ${s})">★</span>`
+    ).join('');
+
+    // Credits
+    document.getElementById('modalCredits').innerHTML = `
+        <div class="modal-credit-row"><span class="mcr-label">Director</span><span class="mcr-val">${m.director}</span></div>
+        <div class="modal-credit-row"><span class="mcr-label">Cast</span><span class="mcr-val">${m.cast.join(' · ')}</span></div>
+    `;
+
+    // Awards
+    document.getElementById('modalAwards').innerHTML = m.awards.split('|').map(a =>
+        `<div class="award-chip gold"><i class="fa-solid fa-trophy"></i> ${a.trim()}</div>`
+    ).join('');
+
+    // Details grid
+    document.getElementById('modalDetails').innerHTML = `
+        <div class="mdg-item"><div class="mdg-label">Released</div><div class="mdg-val">${m.release}</div></div>
+        <div class="mdg-item"><div class="mdg-label">Country</div><div class="mdg-val">${m.country}</div></div>
+        <div class="mdg-item"><div class="mdg-label">Language</div><div class="mdg-val">${m.language}</div></div>
+        <div class="mdg-item"><div class="mdg-label">Box Office</div><div class="mdg-val">${m.boxoffice}</div></div>
+        <div class="mdg-item mdg-full"><div class="mdg-label">Tagline</div><div class="mdg-val italic">"${m.tagline}"</div></div>
+    `;
+
+    document.getElementById('movieModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    document.getElementById('movieModal').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function rateMovie(rank, val) {
+    userRatings[rank] = val;
+    document.querySelectorAll('#modalStars .star-btn').forEach(s => {
+        s.classList.toggle('lit', parseInt(s.dataset.val) <= val);
+    });
+}
+
+document.getElementById('modalClose').addEventListener('click', closeModal);
+document.getElementById('movieModal').addEventListener('click', e => {
+    if (e.target === document.getElementById('movieModal')) closeModal();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// ─── INIT ─────────────────────────────────────────────────────────
+renderList();
+</script>
+</body>
+</html>
+
+
+
+
